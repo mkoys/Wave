@@ -2,6 +2,8 @@ import router from "./router.js";
 
 import registerUser from "./tools/registerUser.js";
 import loginUser from "./tools/loginUser.js";
+import addUser from "./tools/addUser.js";
+
 
 import addSession from "./tools/addSession.js";
 
@@ -10,6 +12,7 @@ export default {
     tools: {
         registerUser,
         loginUser,
+        addUser,
         addSession
     }
 }

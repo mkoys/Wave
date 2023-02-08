@@ -1,6 +1,6 @@
 import wave from "../../../wave.js";
 
-import createUser from "../library/createUser.js";
+import addUser from "../tools/addSession.js";
 import processData from "../library/processData.js";
 
 export default async (data) => {
@@ -14,9 +14,7 @@ export default async (data) => {
     const processErrors = await processData(registerData.process, data);
     if (processErrors.errors.length) { return processErrors }
 
-    const user = await createUser(data);
-
-    await wave.addon.insert("users", user);
+    await addUser(data);
 
     return { success: "User created" }
 }
