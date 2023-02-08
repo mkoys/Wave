@@ -10,7 +10,7 @@ export default async (data) => {
     if (registerData === false) { return { error: "No register data were found" } }
 
     const dataErrors = await processData(registerData.rules, data);
-    if (dataErrors.errors.length) { return checkErrors }
+    if (dataErrors.errors.length) { return dataErrors }
 
     const processErrors = await processData(registerData.process, data);
     if (processErrors.errors.length) { return processErrors }
