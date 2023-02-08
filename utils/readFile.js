@@ -8,7 +8,7 @@ export default (filename) => {
     const configPath = new URL(filename, rootFolderPath).pathname;
 
     try { file = readFileSync(configPath, "utf-8") }
-    catch (error) { console.error("Could not load config properly") }
+    catch (error) { console.error("Could not read file properly") }
 
     return file;
 }

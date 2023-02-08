@@ -3,8 +3,8 @@ import wave from "../wave.js";
 async function load(moduleList) {
     let modules = [];
 
-    for (const moduleItem of moduleList) {
-        const module = await import("./modules/" + moduleItem.path);
+    for (let moduleItem of moduleList) {
+        const module = await import("../modules/" + moduleItem.path);
         moduleItem = { ...moduleItem, ...module.default };
         modules.push(moduleItem);
     }

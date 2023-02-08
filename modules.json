@@ -1,1 +1,6 @@
-[]
+[
+    {
+        "name": "auth",
+        "path": "auth/exports.js"
+    }
+]
