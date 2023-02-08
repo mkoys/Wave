@@ -1,5 +1,9 @@
 [
     {
+        "name": "addon",
+        "path": "addon/exports.js"
+    },
+    {
         "name": "auth",
         "path": "auth/exports.js"
     }

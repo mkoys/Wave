@@ -1,10 +1,10 @@
-import read from "../database/read.js";
+import wave from "../../../wave.js";
 
 import processData from "../library/processData.js";
 import addSession from "../tools/addSession.js";
 
 export default async (data) => {
-    const loginData = await read("data", { name: "login" });
+    const loginData = await wave.addon.read("data", { name: "login" });
 
     if (loginData === false) { return { errors: ["No login data were found"] } }
 
@@ -16,7 +16,7 @@ export default async (data) => {
 
     Object.keys(data).map((value) => data[value] = new RegExp(data[value], "i"));
 
-    const user = await read("users", data);
+    const user = await wave.addon.read("users", data);
     const session = await addSession(user.id);
 
     return session;

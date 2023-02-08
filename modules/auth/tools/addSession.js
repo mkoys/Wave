@@ -1,9 +1,9 @@
-import insert from "../database/insert.js";;
+import wave from "../../../wave.js";
 
 import createSession from "../library/createSession.js";
 
 export default async (id) => {
     const session = createSession(id);
-    insert("sessions", session);
+    wave.addon.insert("sessions", session);
     return session;
 }

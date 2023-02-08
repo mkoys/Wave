@@ -1,11 +1,10 @@
-import insert from "../database/insert.js";
-import read from "../database/read.js";
+import wave from "../../../wave.js";
 
 import createUser from "../library/createUser.js";
 import processData from "../library/processData.js";
 
 export default async (data) => {
-    const registerData = await read("data", { name: "register" });
+    const registerData = await wave.addon.read("data", { name: "register" });
 
     if (registerData === false) { return { error: "No register data were found" } }
 
@@ -17,7 +16,7 @@ export default async (data) => {
 
     const user = await createUser(data);
 
-    await insert("users", user);
+    await wave.addon.insert("users", user);
 
     return { success: "User created" }
 }

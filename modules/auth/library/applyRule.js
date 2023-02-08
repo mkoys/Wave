@@ -1,5 +1,5 @@
 import { hashSync, compareSync } from "bcrypt";
-import read from "../database/read.js";
+import wave from "../../../wave.js";
 
 export default async (rule, data, field, value) => {
     let error = false;
@@ -51,7 +51,7 @@ export default async (rule, data, field, value) => {
             const userFilter = {};
             userFilter[field] = new RegExp(data[field], "i");
 
-            const user = await read("users", userFilter);
+            const user = await wave.addon.read("users", userFilter);
             if (!user) { error = true; break; }
 
             const compare = compareSync(data[value], user[value]);
@@ -62,7 +62,7 @@ export default async (rule, data, field, value) => {
             let filter = {};
             filter[field] = data[field];
 
-            const found = await read("users", filter);
+            const found = await wave.addon.read("users", filter);
 
             if (found === false) { return false }
             if (found) { error = true }
