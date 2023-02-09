@@ -1,4 +1,5 @@
 import router from "./router.js";
+import realtime from "./realtime.js";
 
 import registerUser from "./tools/registerUser.js";
 import loginUser from "./tools/loginUser.js";
@@ -9,6 +10,7 @@ import addSession from "./tools/addSession.js";
 
 export default {
     router,
+    realtime,
     tools: {
         registerUser,
         loginUser,
