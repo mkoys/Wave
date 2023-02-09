@@ -1,6 +1,6 @@
 import wave from "../../../wave.js";
 
-import addUser from "../tools/addSession.js";
+import addUser from "../tools/addUser.js";
 import processData from "../library/processData.js";
 
 export default async (data) => {
