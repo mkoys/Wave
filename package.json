@@ -13,7 +13,7 @@
   "author": "Mkoys",
   "license": "MIT",
   "dependencies": {
-    "@mkoys/flash": "^1.0.0",
+    "@mkoys/flash": "github:mkoys/flash",
     "@mkoys/post": "github:mkoys/post",
     "bcrypt": "^5.1.0",
     "mongodb": "^5.0.0",

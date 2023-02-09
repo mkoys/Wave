@@ -1,7 +1,8 @@
 import { nanoid } from "nanoid";
 
 import websocket from "../../source/websocket.js";
-import appendSocket from "./tools/appendSocket.js";
+import pushSocket from "./tools/pushSocket.js";
+import pullSocket from "./tools/pullSocket.js";
 
 export default async () => {
     const realtime = websocket();
@@ -13,7 +14,20 @@ export default async () => {
 
         const id = nanoid();
 
-        const result = await appendSocket(token, id);
+        const result = await pushSocket(token, id);
+
+        if (result) {
+            socket.accept()
+        } else {
+            socket.decline()
+        }
+
+        socket.id = id;
+        socket.token = token;
+    });
+    
+    realtime.event("disconnect", async (request, socket) => {
+        const result = await pullSocket(socket.token, socket.id);
 
         if (result) {
             socket.accept()

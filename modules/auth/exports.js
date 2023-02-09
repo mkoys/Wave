@@ -7,15 +7,19 @@ import logoutUser from "./tools/logoutUser.js";
 import addUser from "./tools/addUser.js";
 
 import addSession from "./tools/addSession.js";
+import pushSocket from "./tools/pushSocket.js";
+import pullSocket from "./tools/pullSocket.js";
 
 export default {
     router,
     realtime,
     tools: {
+        addUser,
         registerUser,
         loginUser,
-        addUser,
+        logoutUser,
         addSession,
-        logoutUser
+        pushSocket,
+        pullSocket
     }
 }
