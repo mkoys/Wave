@@ -3,6 +3,7 @@ import wave from "../../../wave.js";
 
 export default async (rule, data, field, value) => {
     let error = false;
+    
     switch (rule) {
         // Data must be defined
         case "required":
