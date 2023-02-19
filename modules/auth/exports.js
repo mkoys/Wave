@@ -5,6 +5,7 @@ import registerUser from "./tools/registerUser.js";
 import loginUser from "./tools/loginUser.js";
 import logoutUser from "./tools/logoutUser.js";
 import addUser from "./tools/addUser.js";
+import getUser from "./tools/getUser.js";
 
 import addSession from "./tools/addSession.js";
 import pushSocket from "./tools/pushSocket.js";
@@ -20,6 +21,7 @@ export default {
         logoutUser,
         addSession,
         pushSocket,
-        pullSocket
+        pullSocket,
+        getUser
     }
 }
