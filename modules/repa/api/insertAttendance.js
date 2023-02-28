@@ -17,7 +17,7 @@ export default async (req, res) => {
 
     if(user) {
         data = {...data, id: user.id}
-        addAttenadnce(data);
+        await addAttenadnce(data);
         res.json({ message: "ok" });
     }else {
         res.json({ message: "Not authorized" });
