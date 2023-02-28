@@ -6,9 +6,5 @@
     {
         "name": "auth",
         "path": "auth/exports.js"
-    },
-    {
-        "name": "repa",
-        "path": "repa/exports.js"
     }
 ]
