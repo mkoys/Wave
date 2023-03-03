@@ -1,8 +1,8 @@
 import wave from "../../../wave.js";
 
-export default async ({token}) => {
+export default async (filter) => {
     
-    const session = await wave.addon.read("sessions", {token});
+    const session = await wave.addon.read("sessions", filter);
     
     if(!session) {
         return false;
