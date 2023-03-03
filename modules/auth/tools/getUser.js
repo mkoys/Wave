@@ -10,5 +10,7 @@ export default async (filter) => {
 
     const user = await wave.addon.read("users", {id: session.id});
 
+    delete user._id;
+
     return user;
 }
