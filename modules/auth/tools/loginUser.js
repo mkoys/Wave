@@ -8,7 +8,7 @@ export default async (data) => {
 
     if (loginData === false) { return { errors: ["No login data were found"] } }
 
-    const dataErrors = await processData(loginData.rules, data);
+    const dataErrors = await processData(loginData.rules, data, true);
     if (dataErrors.errors.length) { return dataErrors }
 
     const processErrors = await processData(loginData.process, data);

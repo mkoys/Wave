@@ -8,7 +8,7 @@ export default async (data) => {
 
     if (registerData === false) { return { error: "No register data were found" } }
 
-    const dataErrors = await processData(registerData.rules, data);
+    const dataErrors = await processData(registerData.rules, data, true);
     if (dataErrors.errors.length) { return dataErrors }
 
     const processErrors = await processData(registerData.process, data);

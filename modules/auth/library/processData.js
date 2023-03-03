@@ -1,10 +1,19 @@
 import applyRule from "./applyRule.js";
 
-export default async (rules, data) => {
+export default async (rules, data, clean) => {
     let errors = [];
-    const fields = Object.keys(rules);
+    const ruleFields = Object.keys(rules);
+    const dataFields = Object.keys(data);
 
-    for (const field of fields) {
+    if(clean) {
+        for(const dataField of dataFields) {
+            if(ruleFields.indexOf(dataField) == -1) {
+                delete data[dataField];
+            }
+        } 
+    }
+
+    for (const field of ruleFields) {
         const fieldRules = rules[field];
         const fieldRuleKeys = Object.keys(fieldRules);
 
